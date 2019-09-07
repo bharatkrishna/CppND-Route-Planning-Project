@@ -23,7 +23,7 @@ class RouteModel : public Model {
 
         float distance(Node other) const {
           return std::sqrt(std::pow((x - other.x), 2) + std::pow((y - other.y), 2));
-        };
+        }
         void FindNeighbors();
 
       private:
@@ -37,7 +37,7 @@ class RouteModel : public Model {
     RouteModel(const std::vector<std::byte> &xml);  
     std::vector<Node> path; // This variable will eventually store the path that is found by the A* search.
     auto &SNodes() { return m_Nodes; }
-    auto& GetNodeToRoadMap() { return node_to_road; }
+    auto &GetNodeToRoadMap() { return node_to_road; }
     Node &FindClosestNode(float x, float y);
 
   private:

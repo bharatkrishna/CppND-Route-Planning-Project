@@ -54,15 +54,17 @@ int main(int argc, const char **argv)
     // user input for these values using std::cin. Pass the user input to the
     // RoutePlanner object below.
     float start_x, start_y, end_x, end_y;
-    if ((start_x < 0 || start_x > 100) || (start_y < 0 || start_y > 100) || (end_x < 0 || end_x > 100) || (end_y < 0 || end_y > 100))
-    {
-        std::cout << "Coordinates should be > 0 and < 100";
-        return 0;
-    }
+
     std::cout << "Enter the start corrdinates (shound be between 0 and 100)" << "\n";
     std::cin >> start_x >> start_y;
     std::cout << "Enter the end corrdinates (shound be between 0 and 100)" << "\n";
     std::cin >> end_x >> end_y;
+
+    if ((start_x < 0 || start_x > 100) || (start_y < 0 || start_y > 100) || (end_x < 0 || end_x > 100) || (end_y < 0 || end_y > 100))
+    {
+        std::cout << "Coordinates should be > 0 and < 100" << "\n";
+        return 0;
+    }
 
     // Build Model.
     RouteModel model{osm_data};
