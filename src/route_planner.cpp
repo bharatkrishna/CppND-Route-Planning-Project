@@ -14,7 +14,7 @@ RoutePlanner::RoutePlanner(RouteModel &model, float start_x, float start_y, floa
 std::vector<RouteModel::Node> RoutePlanner::ConstructFinalPath(RouteModel::Node *current_node)
 {
     std::vector<RouteModel::Node> path_found;
-    this->distance = 0.0;
+    distance = 0.0;
     RouteModel::Node parent;
 
     while (current_node->parent != nullptr) {
